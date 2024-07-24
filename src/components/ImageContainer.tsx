@@ -25,36 +25,26 @@ export const ImageContainer = memo(
     index,
     imageContainerRef,
   }: ImageContainerProps) => {
-        const setImageRef = useRef<HTMLDivElement>(null)
+    const setImageRef = useRef<HTMLDivElement>(null)
 
-        const [slideRef, setSlideRef] = useState<HTMLDivElement | null>(
-          index === 0 ? mainSlideRef : slideRefs[index - 1]
-        )
-        
-    useGSAP(() => {
-      //const slideRef =
-      //      index === 0 ? mainSlideRef: slideRefs[index - 1]
-      if (setImageRef.current) {
-        gsap.to(setImageRef.current, {
-          scrollTrigger: {
-            trigger: slideRef,
-            start: "top top",
-            end: "bottom center",
-            scrub: true,
-            markers: true,
-          },
-          opacity: 1,
-        })
-      }
-    }, { scope: imageContainerRef })
-        
-        useEffect(() => {
-            if (index === 0) {
-                setSlideRef(mainSlideRef)
-            } else {
-                setSlideRef(slideRefs[index - 1])
-            }
-        }, [index])
+
+    useGSAP(
+      () => {
+        if (setImageRef.current) {
+          gsap.to(setImageRef.current, {
+            scrollTrigger: {
+              trigger: index === 0 ? mainSlideRef : slideRefs[index - 1],
+              start: "top top",
+              end: "bottom center",
+              scrub: true,
+              markers: true,
+            },
+            opacity: 1,
+          })
+        }
+      },
+      { scope: imageContainerRef }
+    )
 
     return (
       <div key={index} className={styles.imageContainer} ref={setImageRef}>
