@@ -10,9 +10,9 @@ import type { ISlide } from "@/constants/main"
 import styles from "./ImageContainer.module.scss"
 
 interface ImageContainerProps {
-  mainSlideRef: RefObject<HTMLImageElement>
+  mainSlideRef: HTMLImageElement | null
   slide: ISlide
-  slideRefs: MutableRefObject<(HTMLDivElement | null)[]>
+  slideRefs: (HTMLDivElement | null)[]
   index: number
   imageContainerRef: RefObject<HTMLDivElement>
 }
@@ -30,18 +30,21 @@ export const ImageContainer = memo(
         //console.log(index)
 if (index === 0) {
             console.log("mainSlideRef", mainSlideRef)
-            console.log("mainSlideRef.current", mainSlideRef.current)
         } else {
            console.log("slideRefs", slideRefs)
-           console.log(
-             "slideRefs.current[index - 1]",
-             slideRefs.current[index - 1]
-           ) 
         }
     useGSAP(() => {
       const slideRef =
-            index === 0 ? mainSlideRef.current : slideRefs.current[index - 1]
-        
+            index === 0 ? mainSlideRef: slideRefs[index - 1]
+        //if (index === 0) {
+        //  console.log("mainSlideRef", mainSlideRef)
+        //} else {
+        //  console.log("slideRefs", slideRefs)
+        //  console.log(
+        //    "slideRefs.current[index - 1]",
+        //    slideRefs.current[index - 1]
+        //  )
+        //}
         
         //console.log(mainSlideRef)
         // console.log(slideRefs)
