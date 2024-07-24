@@ -65,7 +65,7 @@ if (index === 0) {
           opacity: 1,
         })
       }
-    }, [{ scope: imageContainerRef }, index])
+    }, { scope: imageContainerRef })
 
     return (
       <div key={index} className={styles.imageContainer} ref={setImageRef}>
