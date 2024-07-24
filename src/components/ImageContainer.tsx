@@ -49,7 +49,7 @@ export const ImageContainer = memo(
         useEffect(() => {
             gsap.to(setImageRef.current, {
               scrollTrigger: {
-                trigger: index === 0 ? mainSlideRef : slideRefs[index - 1],
+                trigger: slideRefs[index - 1],
                 start: "top top",
                 end: "bottom center",
                 scrub: true,
