@@ -1,0 +1,88 @@
+.button {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 2.4rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: #383838;
+  border-radius: 2rem;
+  padding: 1.3rem 4.5rem 1.3rem 5.2rem;
+  overflow: hidden;
+  z-index: 0;
+
+
+  &.effect {
+
+    &::after {
+      position: absolute;
+      content: "";
+      filter: blur(5rem);
+      -webkit-backdrop-filter: blur(5rem);
+      --width: 0;
+      --height: 0;
+      width: var(--width);
+      height: var(--height);
+      top: var(--y);
+      left: var(--x);
+      transform: translate(-50%, -50%);
+      transition: width 300ms ease, height 300ms ease;
+      z-index: -1;
+
+    }
+
+  }
+
+  &.small {
+    font-size: 1.4rem;
+    padding: 0.8rem 2.1rem 0.8rem 2.8rem;
+    border-radius: 1rem;
+
+
+  }
+}
+$less-black: #151515;
+$black: #121212;
+$black-900: #000;
+
+
+$grey-lightest: #c0c0c0;
+$grey-light: #484848;
+$grey-middle: #383838;
+$grey-light-dark: #363636;
+$grey-dark: #323232;
+$grey-darkest: #202020;
+
+
+$white-100: #e3e3e3;
+$white-200: #dcdcdc;
+$white-300: #dbdbdb;
+$white-400: #dadada;
+$white-500: #d3d3d3;
+
+$orange-100: #f15830;
+$orange-200: #e3290a;
+
+$red-100: #dd2e00;
+$red-200: #ff0302;
+
+$blue-100: #2aabee;
+$blue-200: #0077ff;
+
+$bg-color: $black;
+$text-color: $white-200;
+$text-dark-color: $grey-darkest;
+$accent-color: $orange-100;
+$text-color-secondary: $grey-lightest;
+$danger-color: $red-100;
+$overlay-color: rgba($bg-color, 0.7);
+
+$header-h: 10.3rem;
+
+$mobile-buttons-z-index: 19;
+$modal-z-index: 20;
+$toast-z-index: 21;
+
+$mobile: "max-width: 767px";

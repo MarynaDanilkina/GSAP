@@ -1,0 +1,50 @@
+.section {
+  margin: 0 auto 19rem;
+  max-width: 160rem;
+
+
+  .header {
+    max-width: 104rem;
+    margin: 0 auto 8rem;
+
+
+    .title {
+      font-size: 17rem;
+      margin-bottom: 5rem;
+      margin-left: -0.4rem;
+      text-align: start;
+
+    }
+
+    .description {
+      font-size: 2.4rem;
+      max-width: 50rem;
+
+    }
+  }
+
+  .form {
+    display: flex;
+    gap: 3rem;
+
+
+    .button {
+
+      svg {
+        width: 5.2rem;
+        height: auto;
+        transform: rotate(-135deg);
+
+      }
+    }
+  }
+
+  .error {
+    display: block;
+    width: fit-content;
+    color: #ff6565;
+    font-size: 2rem;
+    margin: 2rem 2rem 0 auto;
+
+  }
+}
