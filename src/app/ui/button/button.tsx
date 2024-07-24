@@ -45,10 +45,6 @@ const Button = (props: ButtonProps) => {
         href={href}
         onClick={onClick}
         onMouseMove={onMouseMove}
-        style={{
-          "--x": `${position.x}px`,
-          "--y": `${position.y}px`,
-        }}
         target={target}>
         {children}
       </a>
@@ -65,11 +61,7 @@ const Button = (props: ButtonProps) => {
       )}
       onClick={onClick}
       type={type}
-      onMouseMove={onMouseMove}
-      style={{
-        "--x": `${position.x}px`,
-        "--y": `${position.y}px`,
-      }}>
+      onMouseMove={onMouseMove}>
       {children}
     </button>
   );

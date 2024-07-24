@@ -29,11 +29,6 @@ const Toast = forwardRef<HTMLDivElement, ToastProps>(
                 ref={ref}
                 className={styles.container}
                 onMouseMove={onMouseMove}
-                style={{
-                    ...style,
-                    "--x": `${position.x}px`,
-                    "--y": `${position.y}px`,
-                }}
             >
                 <div className={styles.icon}>
                     <MarkInCircle/>
