@@ -28,7 +28,7 @@ export const ImageContainer = memo(
     const setImageRef = useRef<HTMLDivElement>(null)
 
 
-    useGSAP(
+    /*useGSAP(
       () => {
         if (setImageRef.current) {
           gsap.to(setImageRef.current, {
@@ -44,7 +44,20 @@ export const ImageContainer = memo(
         }
       },
       { scope: imageContainerRef }
-    )
+        )*/
+        
+        useEffect(() => {
+            gsap.to(setImageRef.current, {
+              scrollTrigger: {
+                trigger: index === 0 ? mainSlideRef : slideRefs[index - 1],
+                start: "top top",
+                end: "bottom center",
+                scrub: true,
+                markers: true,
+              },
+              opacity: 1,
+            })
+        }, [])
 
     return (
       <div key={index} className={styles.imageContainer} ref={setImageRef}>
