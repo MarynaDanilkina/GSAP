@@ -3,7 +3,7 @@
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import Image from "next/image"
-import { memo, MutableRefObject, RefObject, useRef } from "react"
+import { memo, MutableRefObject, RefObject, useEffect, useRef, useState } from "react"
 
 import type { ISlide } from "@/constants/main"
 
@@ -26,33 +26,14 @@ export const ImageContainer = memo(
     imageContainerRef,
   }: ImageContainerProps) => {
         const setImageRef = useRef<HTMLDivElement>(null)
+
+        const [slideRef, setSlideRef] = useState<HTMLDivElement | null>(
+          index === 0 ? mainSlideRef : slideRefs[index - 1]
+        )
         
-        //console.log(index)
-if (index === 0) {
-            console.log("mainSlideRef", mainSlideRef)
-        } else {
-           console.log("slideRefs", slideRefs)
-        }
     useGSAP(() => {
-      const slideRef =
-            index === 0 ? mainSlideRef: slideRefs[index - 1]
-        //if (index === 0) {
-        //  console.log("mainSlideRef", mainSlideRef)
-        //} else {
-        //  console.log("slideRefs", slideRefs)
-        //  console.log(
-        //    "slideRefs.current[index - 1]",
-        //    slideRefs.current[index - 1]
-        //  )
-        //}
-        
-        //console.log(mainSlideRef)
-        // console.log(slideRefs)
-
-      //if (index === 1) {
-      //  console.log(slideRef)
-      //}
-
+      //const slideRef =
+      //      index === 0 ? mainSlideRef: slideRefs[index - 1]
       if (setImageRef.current) {
         gsap.to(setImageRef.current, {
           scrollTrigger: {
@@ -66,6 +47,14 @@ if (index === 0) {
         })
       }
     }, { scope: imageContainerRef })
+        
+        useEffect(() => {
+            if (index === 0) {
+                setSlideRef(mainSlideRef)
+            } else {
+                setSlideRef(slideRefs[index - 1])
+            }
+        }, [index])
 
     return (
       <div key={index} className={styles.imageContainer} ref={setImageRef}>
