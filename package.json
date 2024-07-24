@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "scroll-animation",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,15 +10,11 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
-    "@react-hook/window-size": "^3.1.1",
-    "@react-input/mask": "^1.2.5",
     "clsx": "^2.1.1",
-    "gsap": "^3.12.5",
     "lenis": "^1.1.6",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
-    "react-hook-form": "^7.52.1",
     "sass": "^1.77.8"
   },
   "devDependencies": {
