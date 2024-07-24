@@ -103,32 +103,34 @@ export default function Home() {
             });
 
             gsap.fromTo(
-                imageContainerRef.current,
-                { width: "100dvw" },
-                {
-                    scrollTrigger: {
-                        trigger: mainSlideRef.current,
-                        start: "top top",
-                        end: "bottom top",
-                        scrub: true,
-                    },
-                    width: "68vw",
-                    height: "calc(100dvh - 19.7rem)",
-                    right: "3.7rem",
-                    top: "16rem",
-                    borderRadius: "2rem",
-                }
-            );
+              imageContainerRef.current,
+              { width: "100dvw" },
+              {
+                scrollTrigger: {
+                  trigger: mainSlideRef.current,
+                  start: "top top",
+                  end: "bottom top",
+                  scrub: true,
+                  
+                },
+                width: "68vw",
+                height: "calc(100dvh - 19.7rem)",
+                right: "3.7rem",
+                top: "16rem",
+                borderRadius: "2rem",
+              }
+            )
 
             gsap.to(mainImageRef.current, {
-                scrollTrigger: {
-                    trigger: mainSlideRef.current,
-                    start: "top top",
-                    end: "bottom center",
-                    scrub: true,
-                },
-                opacity: 0,
-            });
+              scrollTrigger: {
+                trigger: mainSlideRef.current,
+                start: "bottom bottom",
+                end: "bottom center",
+                scrub: true,
+                markers: true,
+              },
+              opacity: 0,
+            })
         }
     }, []);
 
