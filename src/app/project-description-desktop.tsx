@@ -9,7 +9,6 @@ import {clsx} from "clsx";
 import {useLenis} from "lenis/react";
 
 import {ButtonCircle} from "./shared/ui/button-circle/button-circle";
-import Icon from "./ui/icon";
 import {RequestSection} from "./request-section/request-section";
 
 import {IProjectData, IProjectLink, projectLinksData, SlideType} from "./constants/project";
@@ -258,7 +257,6 @@ export const ProjectDescriptionDesktop = memo(({requestSection, projectData}: Pr
                     <div className={styles.backButtonAndTitleBlock} ref={titleBlockRef}>
                         <Link href={"/projects"} className={styles.backButton}>
                             <ButtonCircle as={"div"} className={styles.circle}>
-                                <Icon name="arrow-down" width="12" height="12"/>
                             </ButtonCircle>
                             Вернуться в проекты
                         </Link>
@@ -312,8 +310,6 @@ export const ProjectDescriptionDesktop = memo(({requestSection, projectData}: Pr
                             </p>
                             <div className={styles.titleContainer}>
                                 <h3 className={styles.projectLinkTitle}>{item.title}</h3>
-                                <Icon name={"arrow-down"} width={"39"} height={"38"}
-                                      className={styles.projectLinkIcon}/>
                             </div>
                         </div>
                     </Link>

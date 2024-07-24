@@ -2,7 +2,6 @@
 
 import { forwardRef, ReactNode } from "react";
 import styles from "./input.module.scss";
-import Icon from "../icon";
 import clsx from "clsx";
 import { InputMask } from "@react-input/mask";
 
@@ -45,7 +44,6 @@ const Input = forwardRef<HTMLInputElement, Props>(
         </div>
         {error && (
           <small className={styles.error}>
-            <Icon height="35" width="35" name="warning" />
             {error}
           </small>
         )}

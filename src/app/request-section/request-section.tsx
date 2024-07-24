@@ -7,7 +7,6 @@ import { memo, useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 
 import Button from "../ui/button/button";
-import Icon from "../ui/icon";
 import Input from "../ui/input/input";
 
 import { TRequestSection } from "../types/request.type";
@@ -99,21 +98,18 @@ export const RequestSection = memo(
         </header>
         <form className={styles.form} >
           <Input
-            icon={<Icon name="user" height="34" width="34" />}
             placeholder="Ваше имя"
             {...register("name", { required: "Это поле обязательно" })}
             error={errors.name?.message}
           />
           <Input
             type="phone"
-            icon={<Icon name="phone" height="34" width="34" />}
             placeholder="Ваш номер телефона"
             {...register("phone", { required: "Это поле обязательно" })}
             error={errors.phone?.message}
           />
           <Button type="submit" className={styles.button}>
             Отправить заявку
-            {!isMobile && <Icon name="arrow-down" width="52" height="52" />}
           </Button>
         </form>
 
