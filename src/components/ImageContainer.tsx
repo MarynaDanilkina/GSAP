@@ -27,15 +27,17 @@ export const ImageContainer = memo(
   }: ImageContainerProps) => {
         const setImageRef = useRef<HTMLDivElement>(null)
         
-        console.log(index)
+        //console.log(index)
 
     useGSAP(() => {
       const slideRef =
-        index === 0 ? mainSlideRef.current : slideRefs.current[index - 1]
-
-      if (index === 1) {
+            index === 0 ? mainSlideRef.current : slideRefs.current[index - 1]
+        
         console.log(slideRef)
-      }
+
+      //if (index === 1) {
+      //  console.log(slideRef)
+      //}
 
       if (setImageRef.current) {
         gsap.to(setImageRef.current, {
