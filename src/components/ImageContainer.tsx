@@ -33,7 +33,8 @@ export const ImageContainer = memo(
       const slideRef =
             index === 0 ? mainSlideRef.current : slideRefs.current[index - 1]
         
-        console.log(slideRef)
+        console.log(mainSlideRef)
+         console.log(slideRefs)
 
       //if (index === 1) {
       //  console.log(slideRef)
